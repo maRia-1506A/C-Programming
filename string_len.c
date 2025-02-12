@@ -13,7 +13,7 @@ int main() {
     char name[]= "Zannatul Farzana Maria";
     int length= 0;
 
-    for(int i=; name[i]!='\0'; i++) {
+    for(int i=0; name[i]!='\0'; i++) {
         length++;
     }
     printf("Length: %d\n", length);

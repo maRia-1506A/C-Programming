@@ -19,3 +19,15 @@ int main() {
     return 0;
 }
 
+
+//ascii value of all char
+#include<stdio.h>
+int main() {
+    printf("Printing ASCII valur of all characters:\n");
+
+    for(int i=0; i<=255; i++) {
+        printf("%c     %d\n", i, i);
+    }
+    return 0;
+}
+
