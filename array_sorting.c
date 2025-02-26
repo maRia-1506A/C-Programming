@@ -36,6 +36,7 @@ int main() {
     for(int i=0; i<n; i++) {
         if(key == arr[i]) {
             printf("The key value is found at index %d\n", i);
+            printf("The key value is found at position %d\n", i+1);
             found=1; //key value paoa gse ty 0 theke 1
         }
     }
@@ -47,7 +48,7 @@ int main() {
 }
 
 
-//binary searching
+//binary searching(while loop)
 #include<stdio.h>
 int main() {
     int n, key, low, high, mid;
@@ -84,6 +85,44 @@ int main() {
     if(low > high) {
         printf("Value not found\n");
     }
+    return 0;
+}
+
+
+//binary searching(for loop)
+#include<stdio.h>
+int main()
+{
+    int mid, lower, higher, key, size;
+    printf("Enter size: ");
+    scanf("%d", &size);
+    int arr[size];
+
+    for(int i=0; i<size; i++) {
+        printf("A[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter the value you want to search: ");
+    scanf("%d", &key);
+
+    lower= 0;
+    higher= size-1;
+    mid= (lower+higher)/2;
+
+    for(int i=0; i<size; i++) {
+        if(key>arr[mid]) {
+            lower= mid+1;
+            mid= (lower+higher)/2;
+        } else if(key<arr[mid]) {
+            higher= mid-1;
+            mid= (lower+higher)/2;
+        } else {
+            printf("%d is found at index %d\n", key, mid);
+            printf("%d is found at position %d\n", key, mid+1);
+            break;
+        }
+    }
+
     return 0;
 }
 
