@@ -1,6 +1,7 @@
+//apply binary search and Linear search both and decide which one mechanism is best for finding that specific elements
 #include<stdio.h>
 int main() {
-    int arr[100], n=5;
+    int arr[100], n=10;
     int key, found=0, linearsteps=0, binarysteps=0;
 
     printf("Enter %d array elements:\n", n);
