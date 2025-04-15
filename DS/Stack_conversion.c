@@ -3,7 +3,7 @@
 #include<stdio.h>
 int main() {
     int size, top=-1;
-    printf("Enter the maxsize of the infix expression: ")
+    printf("Enter the maxsize of the infix expression: ");
     scanf("%d", &size);
     
     char infix[size], postfix[size], stack[size];

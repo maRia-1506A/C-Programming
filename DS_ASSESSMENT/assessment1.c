@@ -1,7 +1,37 @@
-//Insert two numbers sequentially at last position in an array by using variables
+// //Insert two numbers sequentially at last position in an array by using variables
+// #include<stdio.h>
+// int main() {
+//     int n, new_value1, new_value2, arr[100];
+//     printf("Enter the number of elements in the array: ");
+//     scanf("%d", &n);
+
+//     printf("Enter %d array elements:\n", n);
+//     for(int i=0; i<n; i++) {
+//         printf("A[%d]: ", i);
+//         scanf("%d", &arr[i]);
+//     }
+
+//     printf("Enter the 1st number you want to insert: ");
+//     scanf("%d", &new_value1);
+//     printf("Enter the 2nd number you want to insert: ");
+//     scanf("%d", &new_value2);
+
+//     arr[n]= new_value1;
+//     arr[n+1]= new_value2;
+//     n= n+2;
+
+//     printf("After inserting at last:\n");
+//     for (int i = 0; i < n; i++) {
+//         printf("A[%d]: %d\n", i, arr[i]);
+//     }
+//     return 0;
+// }
+
+
+//Insert one numbers at any position in an array by using variables
 #include<stdio.h>
 int main() {
-    int n, new_value1, new_value2, arr[100];
+    int n, new_value1, new_index, arr[100];
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
 
@@ -13,13 +43,13 @@ int main() {
 
     printf("Enter the 1st number you want to insert: ");
     scanf("%d", &new_value1);
-    printf("Enter the 2nd number you want to insert: ");
-    scanf("%d", &new_value2);
+    printf("Enter the index where you want to insert: ");
+    scanf("%d", &new_index);
 
-    arr[n]= new_value1;
-    arr[n+1]= new_value2;
-    n= n+2;
-
+   for(int i=n-1; i>=new_index; i--) {
+        arr[i+1]= arr[i];
+        arr[new_index]= new_value1;
+   }
     printf("After inserting at last:\n");
     for (int i = 0; i < n; i++) {
         printf("A[%d]: %d\n", i, arr[i]);

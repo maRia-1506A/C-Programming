@@ -65,6 +65,7 @@ int main() {
         }
     }
     if(lower > higher) {
+        printf("\n");
         printf("Value is not found\n");
     }
 
