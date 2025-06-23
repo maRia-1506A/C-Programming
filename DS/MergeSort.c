@@ -1,1 +1,73 @@
 #include <stdio.h>
+
+void merge(int low, int mid, int high, int arr[]) // function/rules of merging
+{
+    int i = low, j = mid + 1, k = 0;
+    int newArr[high - low + 1];
+
+    while (i <= mid && j <= high)
+    {
+        if (arr[i] <= arr[j])
+        {
+            newArr[k++] = arr[i++];
+        }
+        else
+        {
+            newArr[k++] = arr[j++];
+        }
+    }
+
+    while (i <= mid)
+    {
+        newArr[k++] = arr[i++];
+    }
+
+    while (j <= high)
+    {
+        newArr[k++] = arr[j++];
+    }
+
+    for (int i = low, k = 0; i <= high; i++, k++)
+    {
+        arr[i] = newArr[k];
+    }
+}
+
+void mergeSort(int low, int high, int arr[])
+{
+    if (low < high)
+    {
+        int mid = (low + high) / 2;
+        mergeSort(low, mid, arr);
+        mergeSort(mid + 1, high, arr);
+        merge(low, mid, high, arr);
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("A[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Original Array:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    mergeSort(0, n - 1, arr);
+
+    printf("\nSorted Array:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+}

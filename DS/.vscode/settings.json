@@ -15,5 +15,8 @@
             "connectionTimeout": 30,
             "password": "$QL123#"
         }
-    ]
+    ],
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
