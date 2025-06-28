@@ -3,33 +3,33 @@
 void merge(int low, int mid, int high, int arr[]) // function/rules of merging
 {
     int i = low, j = mid + 1, k = 0;
-    int newArr[high - low + 1];
+    int B[high - low + 1];
 
     while (i <= mid && j <= high)
     {
         if (arr[i] <= arr[j])
         {
-            newArr[k++] = arr[i++];
+            B[k++] = arr[i++];
         }
         else
         {
-            newArr[k++] = arr[j++];
+            B[k++] = arr[j++];
         }
     }
 
     while (i <= mid)
     {
-        newArr[k++] = arr[i++];
+        B[k++] = arr[i++];
     }
 
     while (j <= high)
     {
-        newArr[k++] = arr[j++];
+        B[k++] = arr[j++];
     }
 
     for (int i = low, k = 0; i <= high; i++, k++)
     {
-        arr[i] = newArr[k];
+        arr[i] = B[k];
     }
 }
 

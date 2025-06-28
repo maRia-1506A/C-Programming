@@ -1,28 +1,43 @@
-//Linear searching 
-#include<stdio.h>
-int main() {
-    int n, key, found=0;
-    printf("Enter the size: ");
+#include <stdio.h>
+int linearSearch(int arr[], int n, int key)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == key)
+        {
+            return i; // Return the index of the element
+        }
+    }
+    return -1; // Return -1 if the target is not found
+}
+
+int main()
+{
+    int n, key;
+    printf("Enter the size of the array: ");
     scanf("%d", &n);
     int arr[n];
 
-    for(int i=0; i<n; i++) {
-        printf("arr[%d]: ", i);
+    for (int i = 0; i < n; i++)
+    {
+        printf("A[%d]: ", i);
         scanf("%d", &arr[i]);
     }
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
 
-    printf("Enter the value you want to search: ");
+    printf("\nEnter the value you want to search: ");
     scanf("%d", &key);
-    for(int i=0; i<n; i++) {
-        if(key == arr[i]) {
-            printf("The key value is found at index %d\n", i);
-            printf("The key value is found at position %d\n", i+1);
-            found=1; //key value paoa gse ty 0 theke 1
-        }
+    int result = linearSearch(arr, n, key);
+
+    if (result != -1)
+    {
+        printf("%d is found at index %d & position %d\n", key, result, result + 1);
     }
-    
-    if(found == 0) { //key value paoa na gele found same thkbe
-        printf("The key value is not available\n");
+    else
+    {
+        printf("%d is not found\n");
     }
-    return 0;
 }
