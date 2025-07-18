@@ -1,7 +1,7 @@
 #include <stdio.h>
 int bubbleSort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n - 1; i++) // if n=5, pass(i)=4 [normal bubble]
     {
         for (int j = 0; j < n - i - 1; j++)
         {

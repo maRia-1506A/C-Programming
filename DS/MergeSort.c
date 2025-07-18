@@ -1,38 +1,5 @@
 #include <stdio.h>
 
-void merge(int low, int mid, int high, int arr[]) // function/rules of merging
-{
-    int i = low, j = mid + 1, k = 0;
-    int B[high - low + 1];
-
-    while (i <= mid && j <= high)
-    {
-        if (arr[i] <= arr[j])
-        {
-            B[k++] = arr[i++];
-        }
-        else
-        {
-            B[k++] = arr[j++];
-        }
-    }
-
-    while (i <= mid)
-    {
-        B[k++] = arr[i++];
-    }
-
-    while (j <= high)
-    {
-        B[k++] = arr[j++];
-    }
-
-    for (int i = low, k = 0; i <= high; i++, k++)
-    {
-        arr[i] = B[k];
-    }
-}
-
 void mergeSort(int low, int high, int arr[])
 {
     if (low < high)
@@ -40,7 +7,36 @@ void mergeSort(int low, int high, int arr[])
         int mid = (low + high) / 2;
         mergeSort(low, mid, arr);
         mergeSort(mid + 1, high, arr);
-        merge(low, mid, high, arr);
+
+        int i = low, j = mid + 1, k = 0;
+        int B[high - low + 1];
+
+        while (i <= mid && j <= high)
+        {
+            if (arr[i] <= arr[j])
+            {
+                B[k++] = arr[i++];
+            }
+            else
+            {
+                B[k++] = arr[j++];
+            }
+        }
+
+        while (i <= mid)
+        {
+            B[k++] = arr[i++];
+        }
+
+        while (j <= high)
+        {
+            B[k++] = arr[j++];
+        }
+
+        for (i = low, k = 0; i <= high; i++, k++)
+        {
+            arr[i] = B[k];
+        }
     }
 }
 
@@ -53,7 +49,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        printf("A[%d]: ", i);
+        printf("arr[%d]: ", i);
         scanf("%d", &arr[i]);
     }
 

@@ -1,3 +1,12 @@
+/*
+for loop: if i=1, j= i-1
+condition: temp < arr[j] && j>=0
+after, temp < arr[j], arr[j+1]= arr[j]
+thn j--, again check temp < arr[j]
+then check j>=0
+*/
+
+
 #include <stdio.h>
 void insertionSort(int arr[], int n)
 {
@@ -9,7 +18,7 @@ void insertionSort(int arr[], int n)
         while (arr[j] > temp && j >= 0)
         {
             arr[j + 1] = arr[j];
-            j = j - 1;
+            j--;
         }
         arr[j + 1] = temp;
     }
