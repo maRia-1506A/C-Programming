@@ -1,14 +1,14 @@
 #include <stdio.h>
 void selectionSort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n - 1; i++) //positions 0, 1, 2, 3 are already sorted, so position 4 must already be correct no need to check again.
     {
         int min = i;
         for (int j = i + 1; j < n; j++)
         {
             if (arr[j] < arr[min])
             {
-                min = j;
+                min = j; // cz previously min was i. so now it changed to j.
             }
         }
         if (min != i)

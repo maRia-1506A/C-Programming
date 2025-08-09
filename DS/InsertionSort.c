@@ -44,7 +44,7 @@ int main()
     }
 
     insertionSort(arr, n);
-    printf("\nSorted Array:\n");
+    printf("\nSorted Array in ascending:\n");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
