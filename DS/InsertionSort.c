@@ -17,10 +17,10 @@ void insertionSort(int arr[], int n)
 
         while (arr[j] > temp && j >= 0)
         {
-            arr[j + 1] = arr[j];
-            j--;
+            arr[j + 1] = arr[j]; //right shift
+            j--; // Move one step left to check previous element
         }
-        arr[j + 1] = temp;
+        arr[j + 1] = temp; //space for temp
     }
 }
 
