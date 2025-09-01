@@ -14,7 +14,7 @@ void knapsack(int n, float weight[], float profit[], float capacity) {
         } else {
             x[i]= capacity/weight[i];
             total_profit += x[i]*profit[i];
-            break;
+            break; // capacity used up
         }
     }
 
@@ -41,6 +41,7 @@ int main() {
     printf("Enter the capacity of knapsack: ");
     scanf("%f", &capacity);
 
+    // Calculate profit/weight ratio
     for(int i=0; i<n; i++) {
         ratio[i]= profit[i]/weight[i];
     }
@@ -48,14 +49,15 @@ int main() {
     for(int i=0; i<n-1; i++) {
         for(int j=i+1; j<n; j++) {
             if(ratio[i]<ratio[j]) {
+                // Swap ratio
                 float temp= ratio[i];
                 ratio[i]= ratio[j];
                 ratio[j]= temp;
-
+                // Swap weighy
                 temp= weight[i];
                 weight[i]= weight[j];
                 weight[j]= temp;
-
+                // Swap profit
                 temp= profit[i];
                 profit[i]= profit[j];
                 profit[j]= temp;
@@ -66,3 +68,4 @@ int main() {
     knapsack(n, weight, profit, capacity);
     return 0;
 }
+

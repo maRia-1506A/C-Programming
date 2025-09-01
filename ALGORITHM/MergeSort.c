@@ -15,7 +15,7 @@ void mergeSort(int low, int high, int arr[])
         {
             if (arr[i] <= arr[j])
             {
-                B[k++] = arr[i++];
+                B[k++] = arr[i++]; //use B[k] first, then increase k by 1.
             }
             else
             {
